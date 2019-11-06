@@ -6,8 +6,8 @@ jobs:
     steps:
       - checkout
       - run: |
-          docker build . -t dexels/fscrawler_2.7snap_${CIRCLE_BUILD_NUM}
+          docker build . -t dexels/fscrawler_2.7snap:${CIRCLE_BUILD_NUM}
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker push dexels/fscrawler_2.7snap_${CIRCLE_BUILD_NUM}
+          docker push dexels/fscrawler_2.7snap:${CIRCLE_BUILD_NUM}
 
 
