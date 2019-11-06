@@ -1,0 +1,4 @@
+#! /bin/bash
+el_url=$SET_URL
+
+/fsc/bin/fscrawler job_10 --rest
