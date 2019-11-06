@@ -6,4 +6,4 @@ jobs:
     steps:
       - checkout
       - run: |
-          docker build . -t dexels/fscrawler_2.7snap_$CIRCLE_BUILD_NUM
+          docker build . -t dexels/fscrawler_2.7snap_${CIRCLE_BUILD_NUM}
