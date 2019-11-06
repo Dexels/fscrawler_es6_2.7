@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    machine:
+      - image: circleci/classic:edge
+
+    steps:
+      - checkout
+
+      - run: |
+          docker build . -t dexels/fscrawler_2.7snap
+          docker network create esnet
+          docker run --net esnet --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch:6.7.0
+          docker run --net esnet -e SET_URL="http://elasticsearch:9200" -p 8081:8080 dexels/fscrawler_2.7snap
