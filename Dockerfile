@@ -19,7 +19,7 @@ COPY bin/ /fsc/bin
 COPY lib /fsc/lib
 COPY LICENSE /fsc
 COPY NOTICE /fsc
-COPY readme/README.md /fsc
+COPY readme_fscrawler/README.md /fsc
 
 RUN mkdir /root/.fscrawler
 
