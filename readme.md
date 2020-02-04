@@ -14,15 +14,19 @@ docker run --name kibana --net <network_name> -p 5601:5601 kibana:6.7.0
 
 ## ElasticSearch and Fscrawler Documentation:
 
-### FscrawlerAdapter
+### FscrawlerAdapter for indexing documents to ElasticSearch
 
-Fscrawler adapter is used to index files/documents to ElasticSearch. Use script InitIndexFile.xml and ProcessIndexFile.xml for 
-indexing documents one by one by upload button in the tester.
+Fscrawler adapter is used to index files/documents to ElasticSearch. Use script InitIndexFile.xml (and then ProcessIndexFile.xml) for indexing documents one by one by upload button in the tester.js.
 
 Also, InitIndexFilesFromSql.xml script used for indexing files/documents from SQL.
 
 
-### ElasticSearchAdapter
+### ElasticSearchQueryAdapter for Searching ElasticSearch by keyword
 
 Used to query the ElasticSearch database. InitEsQuery.xml and ProcessEsQuery.xml are for searching the ElasticSearch documents 
 by keyword and will show the File Name, Id and Score.
+
+
+### ElasticSearchDeleteAdapter for deleting indexed file/document by id
+
+InitEsDelete.xml  script (and then ProcessEsDelete.xml) is used to delete file/document with providing the id of the document.
