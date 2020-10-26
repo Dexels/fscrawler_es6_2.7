@@ -6,8 +6,16 @@ jobs:
     steps:
       - checkout
       - run: |
+          docker --version
+          echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USER --password-stdin
           docker build . -t dexels/fscrawler_2.7snap:${CIRCLE_BUILD_NUM}
-          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
           docker push dexels/fscrawler_2.7snap:${CIRCLE_BUILD_NUM}
 
 
+workflows:
+  version: 2
+  workflow:
+    jobs:
+    - build:
+        context:
+        - dexels_docker_hub
